@@ -1,0 +1,831 @@
+<html>
+<head><base href="synthesize://www.tts.ai/text-to-speech/voice-library/category/general/female#2.audio">
+<title>TTS BY RAJ</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/ZSfVw8V/image.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #6366f1;
+  --secondary: #ec4899;
+  --accent: #8b5cf6;
+  --background: #0f172a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+}
+
+.neural-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.waveform-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.waveform {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.voice-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.voice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow:hover::after {
+  opacity: 1;
+}
+
+.visualizer-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  outline: none;
+}
+
+.emotion-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emotion-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.h-32{height:8rem}.h-6{height:1.5rem}.w-6{width:1.5rem}.w-full{width:100%}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-indigo-500\/20{background-color:rgb(99 102 241 / 0.2)}.bg-pink-500\/20{background-color:rgb(236 72 153 / 0.2)}.bg-purple-500\/20{background-color:rgb(168 85 247 / 0.2)}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity))}.text-pink-300{--tw-text-opacity:1;color:rgb(249 168 212 / var(--tw-text-opacity))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.placeholder-gray-500::placeholder{--tw-placeholder-opacity:1;color:rgb(107 114 128 / var(--tw-placeholder-opacity))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head><body class="bg-gray-900">
+
+<div class="neural-container">
+  <header class="mb-12 text-center">
+    <h1 class="text-5xl font-bold mb-4 gradient-text">Text to Speech by RAJ</h1>
+    <p class="text-gray-400 text-xl">Create human-like speech with Options</p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+    
+    <div class="glass-morphism p-6">
+      <h2 class="text-2xl font-semibold mb-4">Voice Selection</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="voice-card glass-morphism p-4 glow">
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-medium">Emma (US)</span>
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-sm">Natural</span>
+          </div>
+          <div class="mt-2 text-gray-400 text-sm">Warm and professional tone</div>
+        </div>
+        <div class="voice-card glass-morphism p-4 glow">
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-medium">James (UK)</span>
+            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-sm">British</span>
+          </div>
+          <div class="mt-2 text-gray-400 text-sm">Sophisticated accent</div>
+        </div>
+        <div class="voice-card glass-morphism p-4 glow">
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-medium">Aria (AI)</span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-sm">Neural</span>
+          </div>
+          <div class="mt-2 text-gray-400 text-sm">Advanced AI voice</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="glass-morphism p-6 lg:col-span-2">
+      <h2 class="text-2xl font-semibold mb-4">Speech Content</h2>
+      <textarea class="w-full h-32 bg-black/20 border border-white/10 rounded-lg p-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-accent focus:outline-none resize-none" placeholder="Type or paste your text here..."></textarea>
+      
+      <div class="mt-6">
+        <h3 class="text-lg font-medium mb-3">Emotional Parameters</h3>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">Speed</label>
+            <input type="range" class="emotion-slider" min="0" max="100" value="50" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">Pitch</label>
+            <input type="range" class="emotion-slider" min="0" max="100" value="50" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="glass-morphism p-6 mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Voice Customization</h2>
+    <div class="grid grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Voice Depth</label>
+        <input type="range" class="emotion-slider" min="0" max="100" value="50" aria-label="Voice Depth" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+      </div>
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Clarity</label>
+        <input type="range" class="emotion-slider" min="0" max="100" value="50" aria-label="Clarity" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+      </div>
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Accent Strength</label>
+        <input type="range" class="emotion-slider" min="0" max="100" value="50" aria-label="Accent Strength" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+      </div>
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Speaking Speed</label>
+        <input type="range" class="emotion-slider" min="0" max="100" value="50" aria-label="Speaking Speed" style="background: linear-gradient(90deg, 
+      var(--accent) 50%, 
+      rgba(255,255,255,0.1) 50%);">
+      </div>
+    </div>
+    <button class="mt-4 px-4 py-2 rounded-full glass-morphism glow">
+      Generate Speech
+    </button>
+  </div>
+
+  
+  <div class="glass-morphism p-6 mb-8">
+    <div class="waveform-container">
+      <svg class="waveform" viewBox="0 0 1200 200">
+        <defs>
+          <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--primary)"></stop>
+            <stop offset="100%" style="stop-color:var(--secondary)"></stop>
+          </linearGradient>
+        </defs>
+        <path d="" fill="none" stroke="url(#wave-gradient)" stroke-width="2">
+          <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
+              M0,100 C300,20 900,180 1200,100;
+              M0,100 C300,180 900,20 1200,100;
+              M0,100 C300,20 900,180 1200,100
+            "></animate>
+        </path>
+      </svg>
+    </div>
+    <div class="visualizer-container"><canvas width="866" height="100"></canvas></div>
+  </div>
+
+  
+  <div class="flex justify-center gap-6">
+    <button class="px-8 py-4 rounded-full glass-morphism glow flex items-center gap-2 group">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+      </svg>
+      Start Recording
+    </button>
+    <button class="px-8 py-4 rounded-full glass-morphism glow flex items-center gap-2" onclick="window.location.href='https://t.me/Ashlynn_Repository';">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 2L3 14h9l-1 8L21 10h-9l1-8z"></path>
+  </svg>
+    raj_smitraj21
+  </button>  
+  </div>
+</div>
+
+<script>
+// Force voices to load
+setTimeout(() => {
+  if (speechSynthesis.getVoices().length === 0) {
+    speechSynthesis.getVoices();
+  }
+}, 100);
+
+// Add this near the top of your script
+window.speechSynthesis.onvoiceschanged = () => {
+  populateVoiceList();
+};
+
+let audioContext;
+let analyzer;
+let canvas;
+let visualizerContainer;
+let ctx;
+
+// Initialize speech synthesis
+const synth = window.speechSynthesis;
+let voices = [];
+let selectedVoice = null;
+
+// Add these variables at the top
+let voiceDepth = 50;
+let voiceClarity = 50;
+let accentStrength = 50;
+let speakingSpeed = 50;
+
+// Populate voice options
+function populateVoiceList() {
+  voices = synth.getVoices();
+  
+  // Modified voice mapping with more specific voice selection
+  const availableVoices = {
+    'Emma': voices.find(v => 
+      v.name.includes('Samantha') || 
+      v.name.includes('Google US English Female') ||
+      v.name.includes('Microsoft Zira')),
+    'James': voices.find(v => 
+      v.name.includes('Google UK English Male') || 
+      v.name.includes('Daniel') ||
+      v.name.includes('Microsoft David')),
+    'Aria': voices.find(v => 
+      v.name.includes('Karen') ||  
+      v.name.includes('Google US English Female') || 
+      v.name.includes('Victoria')) 
+  };
+
+  // Set default voice if none selected 
+  if (!selectedVoice) {
+    selectedVoice = availableVoices['Emma'] || voices[0];
+  }
+
+  return availableVoices;
+}
+
+// Voice cards selection
+document.querySelectorAll('.voice-card').forEach((card, index) => {
+  card.addEventListener('click', () => {
+    const voiceNames = ['Emma', 'James', 'Aria'];
+    const voiceName = voiceNames[index];
+    const voices = populateVoiceList();
+    
+    selectedVoice = voices[voiceName];
+    if (!selectedVoice) {
+      console.warn(`Voice ${voiceName} not found, using default`);
+      selectedVoice = synth.getVoices()[0];
+    }
+    
+    // Update UI
+    document.querySelectorAll('.voice-card').forEach(c => 
+      c.style.border = '1px solid rgba(255, 255, 255, 0.1)');
+    card.style.border = '2px solid var(--accent)';
+    
+    // Update voice characteristics based on current slider values
+    const utterance = new SpeechSynthesisUtterance('Voice selected Dear');
+    utterance.voice = selectedVoice;
+    
+    if (voiceName === 'Aria') {
+      utterance.pitch = 1.5 * (voiceDepth / 50);  
+      utterance.rate = 1.2 * (speakingSpeed / 50);  
+    } else if (voiceName === 'Emma') {
+      utterance.pitch = 1.0 * (voiceDepth / 50);
+      utterance.rate = 1.0 * (speakingSpeed / 50);
+    } else if (voiceName === 'James') {
+      utterance.pitch = 0.8 * (voiceDepth / 50);  
+      utterance.rate = 0.95 * (speakingSpeed / 50);
+    }
+    
+    synth.speak(utterance);
+  });
+});
+
+// Add event listeners for voice customization sliders
+document.querySelector('input[aria-label="Voice Depth"]').addEventListener('input', (e) => {
+  voiceDepth = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Clarity"]').addEventListener('input', (e) => {
+  voiceClarity = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Accent Strength"]').addEventListener('input', (e) => {
+  accentStrength = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Speaking Speed"]').addEventListener('input', (e) => {
+  speakingSpeed = parseInt(e.target.value);
+});
+
+// Initialize visualizer
+function initializeVisualizer() {
+  visualizerContainer = document.querySelector('.visualizer-container');
+  if (!visualizerContainer) return;
+  
+  canvas = document.createElement('canvas');
+  visualizerContainer.appendChild(canvas);
+  ctx = canvas.getContext('2d');
+  
+  // Set initial canvas dimensions
+  canvas.width = visualizerContainer.offsetWidth;
+  canvas.height = visualizerContainer.offsetHeight;
+}
+
+// Initialize audio context
+function initializeAudioContext() {
+  if (!ctx) {
+    initializeVisualizer(); 
+  }
+  
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  analyzer = audioContext.createAnalyser();
+  analyzer.fftSize = 2048;
+
+  if (canvas) { 
+    canvas.width = visualizerContainer.offsetWidth;
+    canvas.height = visualizerContainer.offsetHeight;
+  }
+  
+  return navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+      const source = audioContext.createMediaStreamSource(stream);
+      source.connect(analyzer);
+      visualize();
+    });
+}
+
+// Audio visualization
+function visualize() {
+  if (!ctx || !analyzer) return;
+  
+  const bufferLength = analyzer.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  
+  function draw() {
+    if (!ctx) return; 
+    requestAnimationFrame(draw);
+    
+    analyzer.getByteTimeDomainData(dataArray);
+    
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.2)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = `hsl(${Date.now() / 50 % 360}, 70%, 60%)`;
+    ctx.beginPath();
+    
+    const sliceWidth = canvas.width * 1.0 / bufferLength;
+    let x = 0;
+    
+    for(let i = 0; i < bufferLength; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = v * canvas.height / 2;
+      
+      if(i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+      
+      x += sliceWidth;
+    }
+    
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+  }
+  
+  draw();
+}
+
+// Speech synthesis
+document.querySelector('button:last-child').addEventListener('click', () => {
+  const text = document.querySelector('textarea').value;
+  if (!text) {
+    alert('Please enter some text to generate TTS');
+    return;
+  }
+  
+  synth.cancel();
+  
+  const utterance = new SpeechSynthesisUtterance(text);
+  
+  if (!selectedVoice) {
+    selectedVoice = synth.getVoices()[0];
+  }
+  
+  utterance.voice = selectedVoice;
+  
+  const enthusiasm = document.querySelectorAll('.emotion-slider')[0].value;
+  const pitch = document.querySelectorAll('.emotion-slider')[1].value;
+  
+  // Apply all voice modifications
+  let basePitch = (pitch / 50) * (voiceDepth / 50);
+  let baseRate = (enthusiasm / 50) * (speakingSpeed / 50);
+  
+  // Voice-specific adjustments with custom parameters
+  const voices = populateVoiceList();
+  if (selectedVoice === voices['Aria']) {
+    basePitch *= 1.5;  
+    baseRate *= 1.2 * (voiceClarity / 50);   
+    utterance.volume = voiceClarity / 100;
+  } else if (selectedVoice === voices['James']) {
+    basePitch *= 0.8;  
+    baseRate *= 0.95 * (voiceClarity / 50);
+    utterance.volume = voiceClarity / 100;
+  } else {
+    basePitch *= 1.0;
+    baseRate *= 1.0 * (voiceClarity / 50);
+    utterance.volume = voiceClarity / 100;
+  }
+  
+  utterance.pitch = Math.max(0, Math.min(2, basePitch));  
+  utterance.rate = Math.max(0.1, Math.min(2, baseRate));  
+  
+  synth.speak(utterance);
+});
+
+// Recording
+document.querySelector('button:first-child').addEventListener('click', () => {
+  if (!audioContext) {
+    initializeAudioContext()
+      .catch(err => console.error('Error accessing microphone:', err));
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeVisualizer();
+  document.querySelectorAll('.emotion-slider').forEach(slider => {
+    slider.dispatchEvent(new Event('input'));
+  });
+});
+
+// Emotion Sliders Interactivity
+const emotionSliders = document.querySelectorAll('.emotion-slider');
+emotionSliders.forEach(slider => {
+  slider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    const gradientPos = (value / 100) * 100;
+    slider.style.background = `linear-gradient(90deg, 
+      var(--accent) ${gradientPos}%, 
+      rgba(255,255,255,0.1) ${gradientPos}%)`;
+  });
+});
+
+// Window resize handler for canvas
+window.addEventListener('resize', () => {
+  if (canvas) {
+    canvas.width = visualizerContainer.offsetWidth;
+    canvas.height = visualizerContainer.offsetHeight;
+  }
+});
+
+// Initialize default states
+emotionSliders.forEach(slider => {
+  slider.dispatchEvent(new Event('input'));
+});
+</script>
+
+
+
+</body>
+<script>
+// Force voices to load
+setTimeout(() => {
+  if (speechSynthesis.getVoices().length === 0) {
+    speechSynthesis.getVoices();
+  }
+}, 100);
+
+// Add this near the top of your script
+window.speechSynthesis.onvoiceschanged = () => {
+  populateVoiceList();
+};
+
+let audioContext;
+let analyzer;
+let canvas;
+let visualizerContainer;
+let ctx;
+
+// Initialize speech synthesis
+const synth = window.speechSynthesis;
+let voices = [];
+let selectedVoice = null;
+
+// Add these variables at the top
+let voiceDepth = 50;
+let voiceClarity = 50;
+let accentStrength = 50;
+let speakingSpeed = 50;
+
+// Populate voice options
+function populateVoiceList() {
+  voices = synth.getVoices();
+  
+  // Modified voice mapping with more specific voice selection
+  const availableVoices = {
+    'Emma': voices.find(v => 
+      v.name.includes('Samantha') || 
+      v.name.includes('Google US English Female') ||
+      v.name.includes('Microsoft Zira')),
+    'James': voices.find(v => 
+      v.name.includes('Google UK English Male') || 
+      v.name.includes('Daniel') ||
+      v.name.includes('Microsoft David')),
+    'Aria': voices.find(v => 
+      v.name.includes('Karen') ||  
+      v.name.includes('Google US English Female') || 
+      v.name.includes('Victoria')) 
+  };
+
+  // Set default voice if none selected 
+  if (!selectedVoice) {
+    selectedVoice = availableVoices['Emma'] || voices[0];
+  }
+
+  return availableVoices;
+}
+
+// Voice cards selection
+document.querySelectorAll('.voice-card').forEach((card, index) => {
+  card.addEventListener('click', () => {
+    const voiceNames = ['Emma', 'James', 'Aria'];
+    const voiceName = voiceNames[index];
+    const voices = populateVoiceList();
+    
+    selectedVoice = voices[voiceName];
+    if (!selectedVoice) {
+      console.warn(`Voice ${voiceName} not found, using default`);
+      selectedVoice = synth.getVoices()[0];
+    }
+    
+    // Update UI
+    document.querySelectorAll('.voice-card').forEach(c => 
+      c.style.border = '1px solid rgba(255, 255, 255, 0.1)');
+    card.style.border = '2px solid var(--accent)';
+    
+    // Update voice characteristics based on current slider values
+    const utterance = new SpeechSynthesisUtterance('Voice selected Dear');
+    utterance.voice = selectedVoice;
+    
+    if (voiceName === 'Aria') {
+      utterance.pitch = 1.5 * (voiceDepth / 50);  
+      utterance.rate = 1.2 * (speakingSpeed / 50);  
+    } else if (voiceName === 'Emma') {
+      utterance.pitch = 1.0 * (voiceDepth / 50);
+      utterance.rate = 1.0 * (speakingSpeed / 50);
+    } else if (voiceName === 'James') {
+      utterance.pitch = 0.8 * (voiceDepth / 50);  
+      utterance.rate = 0.95 * (speakingSpeed / 50);
+    }
+    
+    synth.speak(utterance);
+  });
+});
+
+// Add event listeners for voice customization sliders
+document.querySelector('input[aria-label="Voice Depth"]').addEventListener('input', (e) => {
+  voiceDepth = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Clarity"]').addEventListener('input', (e) => {
+  voiceClarity = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Accent Strength"]').addEventListener('input', (e) => {
+  accentStrength = parseInt(e.target.value);
+});
+
+document.querySelector('input[aria-label="Speaking Speed"]').addEventListener('input', (e) => {
+  speakingSpeed = parseInt(e.target.value);
+});
+
+// Initialize visualizer
+function initializeVisualizer() {
+  visualizerContainer = document.querySelector('.visualizer-container');
+  if (!visualizerContainer) return;
+  
+  canvas = document.createElement('canvas');
+  visualizerContainer.appendChild(canvas);
+  ctx = canvas.getContext('2d');
+  
+  // Set initial canvas dimensions
+  canvas.width = visualizerContainer.offsetWidth;
+  canvas.height = visualizerContainer.offsetHeight;
+}
+
+// Initialize audio context
+function initializeAudioContext() {
+  if (!ctx) {
+    initializeVisualizer(); 
+  }
+  
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  analyzer = audioContext.createAnalyser();
+  analyzer.fftSize = 2048;
+
+  if (canvas) { 
+    canvas.width = visualizerContainer.offsetWidth;
+    canvas.height = visualizerContainer.offsetHeight;
+  }
+  
+  return navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+      const source = audioContext.createMediaStreamSource(stream);
+      source.connect(analyzer);
+      visualize();
+    });
+}
+
+// Audio visualization
+function visualize() {
+  if (!ctx || !analyzer) return;
+  
+  const bufferLength = analyzer.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  
+  function draw() {
+    if (!ctx) return; 
+    requestAnimationFrame(draw);
+    
+    analyzer.getByteTimeDomainData(dataArray);
+    
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.2)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = `hsl(${Date.now() / 50 % 360}, 70%, 60%)`;
+    ctx.beginPath();
+    
+    const sliceWidth = canvas.width * 1.0 / bufferLength;
+    let x = 0;
+    
+    for(let i = 0; i < bufferLength; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = v * canvas.height / 2;
+      
+      if(i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+      
+      x += sliceWidth;
+    }
+    
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+  }
+  
+  draw();
+}
+
+// Speech synthesis
+document.querySelector('button:last-child').addEventListener('click', () => {
+  const text = document.querySelector('textarea').value;
+  if (!text) {
+    alert('Please enter some text to generate TTS');
+    return;
+  }
+  
+  synth.cancel();
+  
+  const utterance = new SpeechSynthesisUtterance(text);
+  
+  if (!selectedVoice) {
+    selectedVoice = synth.getVoices()[0];
+  }
+  
+  utterance.voice = selectedVoice;
+  
+  const enthusiasm = document.querySelectorAll('.emotion-slider')[0].value;
+  const pitch = document.querySelectorAll('.emotion-slider')[1].value;
+  
+  // Apply all voice modifications
+  let basePitch = (pitch / 50) * (voiceDepth / 50);
+  let baseRate = (enthusiasm / 50) * (speakingSpeed / 50);
+  
+  // Voice-specific adjustments with custom parameters
+  const voices = populateVoiceList();
+  if (selectedVoice === voices['Aria']) {
+    basePitch *= 1.5;  
+    baseRate *= 1.2 * (voiceClarity / 50);   
+    utterance.volume = voiceClarity / 100;
+  } else if (selectedVoice === voices['James']) {
+    basePitch *= 0.8;  
+    baseRate *= 0.95 * (voiceClarity / 50);
+    utterance.volume = voiceClarity / 100;
+  } else {
+    basePitch *= 1.0;
+    baseRate *= 1.0 * (voiceClarity / 50);
+    utterance.volume = voiceClarity / 100;
+  }
+  
+  utterance.pitch = Math.max(0, Math.min(2, basePitch));  
+  utterance.rate = Math.max(0.1, Math.min(2, baseRate));  
+  
+  synth.speak(utterance);
+});
+
+// Recording
+document.querySelector('button:first-child').addEventListener('click', () => {
+  if (!audioContext) {
+    initializeAudioContext()
+      .catch(err => console.error('Error accessing microphone:', err));
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeVisualizer();
+  document.querySelectorAll('.emotion-slider').forEach(slider => {
+    slider.dispatchEvent(new Event('input'));
+  });
+});
+
+// Emotion Sliders Interactivity
+const emotionSliders = document.querySelectorAll('.emotion-slider');
+emotionSliders.forEach(slider => {
+  slider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    const gradientPos = (value / 100) * 100;
+    slider.style.background = `linear-gradient(90deg, 
+      var(--accent) ${gradientPos}%, 
+      rgba(255,255,255,0.1) ${gradientPos}%)`;
+  });
+});
+
+// Window resize handler for canvas
+window.addEventListener('resize', () => {
+  if (canvas) {
+    canvas.width = visualizerContainer.offsetWidth;
+    canvas.height = visualizerContainer.offsetHeight;
+  }
+});
+
+// Initialize default states
+emotionSliders.forEach(slider => {
+  slider.dispatchEvent(new Event('input'));
+});
+</script>
+</body>
+          </html>
